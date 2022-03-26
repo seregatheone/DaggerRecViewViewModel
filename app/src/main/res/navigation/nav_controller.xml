@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.a18.ui.listfragment.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_changeFIeldsFragment"
+            app:destination="@id/changeFIeldsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeFIeldsFragment"
+        android:name="com.example.a18.ui.changefieldsfragment.ChangeFieldsFragment"
+        android:label="fragment_change_f_ields"
+        tools:layout="@layout/fragment_change_fields">
+        <argument
+            android:name="currentModel"
+            app:argType="com.example.a18.data.retrofitrequest.RequestModel" />
+        <action
+            android:id="@+id/action_changeFIeldsFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>
